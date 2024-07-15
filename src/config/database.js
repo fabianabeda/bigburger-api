@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: '',
+    password: '181059',
     database: 'bigburger',
     define: {
         timestamps: true,
