@@ -35,7 +35,7 @@ const OrderSchema = mongoose.Schema({
                 required: true,
             },
             quantity: {
-                type: String,
+                type: Number,
                 requered: true,
 
             },
@@ -44,7 +44,7 @@ const OrderSchema = mongoose.Schema({
     ],
     status: {
         type: String,
-        requerid: true,
+        requered: true,
     },
 },
 {

@@ -9,6 +9,7 @@ function authMiddleware(request, response, next) {
     }
 
     const token = authToken.split(' ')[1];
+
     try {
         jwt.verify(token, authConfig.secret, (err, decoded) => {
             if (err) {
@@ -16,6 +17,7 @@ function authMiddleware(request, response, next) {
             }
 
             request.userId = decoded.id;
+            request.userName = decoded.name;
             
             return next();
         });
