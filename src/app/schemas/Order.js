@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const OrderSchema = mongoose.Schema({
     user: {
         id: {
@@ -36,22 +35,17 @@ const OrderSchema = mongoose.Schema({
             },
             quantity: {
                 type: Number,
-                requered: true,
-
+                required: true,
             },
-        
         },
     ],
     status: {
         type: String,
-        requered: true,
+        required: true, 
     },
 },
 {
     timestamps: true,
-    },
-
-    
-);
+});
 
 export default mongoose.model('Order', OrderSchema);

@@ -4,14 +4,21 @@ class Category extends Model {
     static init(sequelize) {
         super.init(
             {
-            name: Sequelize.STRING,  
-            }, 
+                name: Sequelize.STRING,
+            },
             {
-            sequelize,
+                sequelize,
             }
         );
-        
+
         return this;
+    }
+
+    static associate(models) {
+        this.hasMany(models.Product, {
+            foreignKey: 'category_id',
+            as: 'products'
+        });
     }
 }
 

@@ -42,17 +42,19 @@ class OrderController {
         // Formatando os produtos para a ordem
         const formattedProducts = findProducts.map(product => {
             const productIndex = products.findIndex((item) => item.id === product.id);
+
             const newProduct = {
                 id: product.id,
                 name: product.name,
                 category: product.category.name,
                 price: product.price,
-                url: product.url,
+                url: product.url, 
                 quantity: products[productIndex].quantity,
             };
             return newProduct;
         });
 
+    
         // Criando a ordem
         const order = {
             user: {
@@ -60,11 +62,14 @@ class OrderController {
                 name: request.userName,
             },
             products: formattedProducts,
+            status: 'Pedido realizado',
         };
 
+        const createdOrder = await Order.create(order);
+        console.log('Ordem criada:', createdOrder);
 
-        return response.status(201).json(order);
+        return response.status(201).json(createdOrder);
     }
 }
 
-export default new OrderController();
+export default new OrderController;
