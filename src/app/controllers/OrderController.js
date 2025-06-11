@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import Order from '../schemas/Order.js'; 
 import Product from '../models/Product.js'; 
 import Category from '../models/Category.js';
-import User from '../models/User';
+import User from '../models/User.js';
 
 class OrderController {
     async store(request, response) {
